@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">CalculatorAndroidStudio</string>
+    <string name="help_instructions">Enter two numbers</string>
+    <string name="result_description">0.00</string>
 </resources>
