@@ -1,2 +1,2 @@
 # AndroidPractices
-Just a few android small android apps
+Just a few small android apps made on different frameworks.
