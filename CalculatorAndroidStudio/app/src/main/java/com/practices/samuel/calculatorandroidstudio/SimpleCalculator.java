@@ -13,8 +13,8 @@ public class SimpleCalculator extends Calculator {
     double inputValue2 = 0;
     AppCompatActivity Activitycontext;
 
-    public SimpleCalculator(AppCompatActivity context) {
-        super(context);
+    private SimpleCalculator(AppCompatActivity context,CalculatorElements elements) {
+        super(elements);
         Activitycontext = context;
         addListeners();
     }
@@ -25,6 +25,11 @@ public class SimpleCalculator extends Calculator {
         addOnDivisionListener();
         addOnMultiplyListener();
         addOnClearListener();
+    }
+
+    public static void Make(AppCompatActivity context,CalculatorElements elements){
+
+        new SimpleCalculator(context,elements);
     }
 
     private void addOnAdditionListener() {

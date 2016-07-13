@@ -9,24 +9,11 @@ import android.widget.TextView;
  * Created by samuel on 7/12/16.
  */
 public abstract class  Calculator {
-    private EditText operand1;
-    private EditText operand2;
-    private Button Addition;
-    private Button Subtraction;
-    private Button Division;
-    private Button Multiplication;
-    private Button Clear;
-    private TextView Result;
+   CalculatorElements calcElements;
 
-    protected Calculator(AppCompatActivity context) {
-        operand1 = (EditText) context.findViewById(R.id.editOperand1);
-        operand2 = (EditText) context.findViewById(R.id.editOperand2);
-        Addition = (Button) context.findViewById(R.id.Addition);
-        Subtraction = (Button) context.findViewById(R.id.Subtraction);
-        Division = (Button) context.findViewById(R.id.Division);
-        Multiplication = (Button) context.findViewById(R.id.Multiplication);
-        Clear = (Button) context.findViewById(R.id.Clear);
-        Result = (TextView) context.findViewById(R.id.Result);
+    protected Calculator(CalculatorElements elements) {
+        calcElements = elements;
+
     }
 
 
@@ -37,34 +24,34 @@ public abstract class  Calculator {
     public abstract void Clear();
 
     public EditText getOperand1() {
-        return operand1;
+        return calcElements.getOperand1Txt();
     }
 
     public EditText getOperand2() {
-        return operand2;
+        return calcElements.getOperand2Txt();
     }
 
     public Button getAddition() {
-        return Addition;
+        return calcElements.getAdditionButton();
     }
 
     public Button getSubtraction() {
-        return Subtraction;
+        return calcElements.getSubtractionButton();
     }
 
     public Button getDivision() {
-        return Division;
+        return calcElements.getDivisionButton();
     }
 
     public Button getMultiplication() {
-        return Multiplication;
+        return calcElements.getMultiplicationButton();
     }
 
     public Button getClear() {
-        return Clear;
+        return calcElements.getClearButton();
     }
 
     public TextView getResult() {
-        return Result;
+        return calcElements.getResultTxt();
     }
 }

@@ -25,7 +25,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        new SimpleCalculator(MainActivity.this);
+
+        operand1 = (EditText) findViewById(R.id.editOperand1);
+        operand2 = (EditText)findViewById(R.id.editOperand2);
+        Addition = (Button) findViewById(R.id.Addition);
+        Subtraction = (Button) findViewById(R.id.Subtraction);
+        Division = (Button) findViewById(R.id.Division);
+        Multiplication = (Button) findViewById(R.id.Multiplication);
+        Clear = (Button) findViewById(R.id.Clear);
+        Result = (TextView) findViewById(R.id.Result);
+        CalculatorElements elements = new CalculatorElements(Result,operand1,operand2,Addition,Subtraction,Division,Multiplication,Clear);
+        SimpleCalculator.Make(MainActivity.this,elements);
 
     }
 }
