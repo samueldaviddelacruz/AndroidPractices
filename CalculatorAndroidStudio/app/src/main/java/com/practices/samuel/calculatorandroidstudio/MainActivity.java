@@ -12,29 +12,29 @@ import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText operand1;
-    private EditText operand2;
-    private Button Addition;
-    private Button Subtraction;
-    private Button Division;
-    private Button Multiplication;
-    private Button Clear;
-    private TextView Result;
+    private EditText Operand1Txt;
+    private EditText Operand2Txt;
+    private Button AdditionButton;
+    private Button SubtractionButton;
+    private Button DivisionButton;
+    private Button MultiplicationButton;
+    private Button ClearButton;
+    private TextView ResultTxt;;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        operand1 = (EditText) findViewById(R.id.editOperand1);
-        operand2 = (EditText)findViewById(R.id.editOperand2);
-        Addition = (Button) findViewById(R.id.Addition);
-        Subtraction = (Button) findViewById(R.id.Subtraction);
-        Division = (Button) findViewById(R.id.Division);
-        Multiplication = (Button) findViewById(R.id.Multiplication);
-        Clear = (Button) findViewById(R.id.Clear);
-        Result = (TextView) findViewById(R.id.Result);
-        CalculatorElements elements = new CalculatorElements(Result,operand1,operand2,Addition,Subtraction,Division,Multiplication,Clear);
+        Operand1Txt = (EditText) findViewById(R.id.editOperand1);
+        Operand2Txt = (EditText)findViewById(R.id.editOperand2);
+        AdditionButton = (Button) findViewById(R.id.Addition);
+        SubtractionButton = (Button) findViewById(R.id.Subtraction);
+        DivisionButton = (Button) findViewById(R.id.Division);
+        MultiplicationButton = (Button) findViewById(R.id.Multiplication);
+        ClearButton = (Button) findViewById(R.id.Clear);
+        ResultTxt = (TextView) findViewById(R.id.Result);
+        CalculatorElements elements = new CalculatorElements(Operand1Txt,Operand2Txt,AdditionButton,SubtractionButton,DivisionButton,MultiplicationButton,ClearButton,ResultTxt);
         SimpleCalculator.Make(MainActivity.this,elements);
 
     }

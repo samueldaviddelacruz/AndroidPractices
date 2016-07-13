@@ -24,34 +24,34 @@ public abstract class  Calculator {
     public abstract void Clear();
 
     public EditText getOperand1() {
-        return calcElements.getOperand1Txt();
+        return calcElements.Operand1Txt;
     }
 
     public EditText getOperand2() {
-        return calcElements.getOperand2Txt();
+        return calcElements.Operand2Txt;
     }
 
     public Button getAddition() {
-        return calcElements.getAdditionButton();
+        return calcElements.AdditionButton;
     }
 
     public Button getSubtraction() {
-        return calcElements.getSubtractionButton();
+        return calcElements.SubtractionButton;
     }
 
     public Button getDivision() {
-        return calcElements.getDivisionButton();
+        return calcElements.DivisionButton;
     }
 
     public Button getMultiplication() {
-        return calcElements.getMultiplicationButton();
+        return calcElements.MultiplicationButton;
     }
 
     public Button getClear() {
-        return calcElements.getClearButton();
+        return calcElements.ClearButton;
     }
 
     public TextView getResult() {
-        return calcElements.getResultTxt();
+        return calcElements.ResultTxt;
     }
 }
