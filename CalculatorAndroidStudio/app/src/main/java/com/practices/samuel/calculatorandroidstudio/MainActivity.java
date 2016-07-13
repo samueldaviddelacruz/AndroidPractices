@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private Button DivisionButton;
     private Button MultiplicationButton;
     private Button ClearButton;
-    private TextView ResultTxt;;
+    private TextView ResultTxt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
