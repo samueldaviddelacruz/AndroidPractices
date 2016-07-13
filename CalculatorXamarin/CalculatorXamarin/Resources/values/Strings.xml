@@ -2,4 +2,6 @@
 <resources>
     <string name="Hello">Hello World, Click Me!</string>
     <string name="ApplicationName">CalculatorXamarin</string>
+    <string name="help_instructions">Enter two numbers</string>
+    <string name="result_description">0.00</string>
 </resources>
