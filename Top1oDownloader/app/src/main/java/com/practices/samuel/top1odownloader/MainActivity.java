@@ -1,9 +1,14 @@
 package com.practices.samuel.top1odownloader;
 
 import android.os.AsyncTask;
+import android.support.annotation.MainThread;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
@@ -18,7 +23,9 @@ import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
 
 public class MainActivity extends AppCompatActivity {
-private TextView xmlTextView;
+    private Button btnParse;
+    private ListView listApps;
+    private String mFileContents;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,8 +33,19 @@ private TextView xmlTextView;
 //
         DownloadData dt = new  DownloadData();
         dt.execute("http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topfreeapplications/limit=10/xml");
-        xmlTextView = (TextView)findViewById(R.id.xmlTextView);
+        btnParse = (Button)findViewById(R.id.btnParse);
+        listApps = (ListView)findViewById(R.id.xmlListView);
 
+        btnParse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            XmlParser parser = new XmlParser(mFileContents);
+                parser.process();
+                ArrayAdapter<App> arrayAdapter = new ArrayAdapter<App>(
+                        MainActivity.this,R.layout.list_item,parser.getApps());
+                listApps.setAdapter(arrayAdapter);
+            }
+        });
 
     }
 
@@ -36,7 +54,7 @@ private TextView xmlTextView;
 
     private class DownloadData extends AsyncTask<String,Void,String>{
 
-        private String mFileContents;
+
         @Override
         protected String doInBackground(String... params) {
             mFileContents = downloadXMLFile(params[0]);
@@ -49,7 +67,6 @@ private TextView xmlTextView;
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
-            xmlTextView.setText(result);
             Log.d("DownloadData","onPostExecute result " + result);
         }
 

@@ -10,9 +10,22 @@
     tools:context="com.practices.samuel.top1odownloader.MainActivity"
     android:id="@+id/relativeLay">
 
-    <TextView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:id="@+id/xmlTextView" />
+        android:text="Parse XML File"
+        android:id="@+id/btnParse"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/xmlListView"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btnParse"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="@id/btnParse" />
 </RelativeLayout>
