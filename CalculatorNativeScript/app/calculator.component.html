@@ -1,0 +1,12 @@
+<StackLayout>
+    <Label text="Enter 2 Numbers" class="title"></Label>
+    <TextField  keyboardType="number" [(ngModel)]="operand1"></TextField >
+    <TextField  keyboardType="number" [(ngModel)]="operand2"></TextField >    
+        <StackLayout orientation="horizontal">     
+            <Button text="+" (tap)="Add(operand1,operand2)"> </Button>
+            <Button text="-" (tap)="Subtract(operand1,operand2)"> </Button>
+            <Button text="*" (tap)="Multiply(operand1,operand2)"> </Button>
+            <Button text="/" (tap)="Divide(operand1,operand2)"> </Button>
+        </StackLayout>
+    <Label [text]="result" class="message" textWrap="true"></Label>
+</StackLayout>
