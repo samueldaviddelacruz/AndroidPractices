@@ -1,0 +1,14 @@
+<StackLayout>
+    <Label text="Top Downloaded Apps" class="title"></Label>
+    
+    <StackLayout orientation="horizontal">  	
+	  	<Button text="Top 10" (tap)="onTap(10)"></Button>
+	  	<Button text="Top 25" (tap)="onTap(25)"></Button>
+    </StackLayout>
+
+  <ListView [items]="appsList" class="small-spacing">
+    <template let-item="item" >
+      <Label [text]="item.title" class="medium-spacing" (tap)="getInfo(item.id)"></Label>
+    </template>
+  </ListView>
+</StackLayout>
